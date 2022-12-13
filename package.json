@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "author": "Shankara",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "passport-jwt": "^4.0.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
+    "pug": "^3.0.2",
     "sequelize": "^6.27.0"
   },
   "devDependencies": {

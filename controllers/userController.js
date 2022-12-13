@@ -1,11 +1,10 @@
 const { User } = require("../models");
 
 function format(user, includeToken) {
-  const { id, username, role } = user;
+  const { id, usercode } = user;
   const formattedUser = {
     id,
-    username,
-    role,
+    usercode,
   };
 
   if (includeToken) {
@@ -16,6 +15,9 @@ function format(user, includeToken) {
 }
 
 module.exports = {
+  index: (req, res, next) => {
+    res.send("Home");
+  },
   register: (req, res, next) => {
     User.register(req.body)
       .then(() => {

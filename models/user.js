@@ -2,17 +2,13 @@
 const {
   Model
 } = require('sequelize');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      this.hasMany(models.GameHistory, {
-        foreignKey: "user_id",
-      });
-
-      this.hasMany(models.GameHistoryDetail, {
+      this.hasOne(models.ToDoList, {
         foreignKey: "user_id",
       });
     }

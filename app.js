@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse various different custom JSON types as JSON
-app.use(bodyParser.json({ type: "application/json" }));
+app.use(bodyParser.json());
 
 // parse some custom thing into a Buffer
 app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
@@ -22,6 +22,8 @@ app.use(passport.initialize());
 
 const addAuthenticated = require("./middlewares/addAuthenticated");
 app.use(addAuthenticated);
+
+// app.get("/", (req, res) => res.send("Hello World!"));
 
 const router = require("./routes");
 app.use(router);
