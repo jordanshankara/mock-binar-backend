@@ -15,9 +15,6 @@ function format(user, includeToken) {
 }
 
 module.exports = {
-  index: (req, res, next) => {
-    res.send("Home");
-  },
   register: (req, res, next) => {
     User.register(req.body)
       .then(() => {
